@@ -106,7 +106,7 @@ public class test {
 //distribute3相比于distribute增加了一个参数维持对初始水果列表的引用
     public static void distribute3(ArrayList<Fruit> currentFruits, ArrayList<Fruit> primaryFruits, int people){
         while (currentFruits.get(currentFruits.size()-1).getNumber() >= (currentFruits.get(0).getNumber()*2 + 2)){
-            int id = currentFruits.get(currentFruits.size()-1).getId();
+            int id = currentFruits.get(currentFruits.size()-1).getId();//获取水果种类再进行拆分
             ArrayList<Fruit> splitedFruit = primaryFruits.get(id).split();
             currentFruits.remove(0);//去除min
             removeFruits(currentFruits, id);//去除以前拆分的id类水果，重新拆分再加入列表
@@ -129,7 +129,7 @@ public class test {
         }
         
         public ArrayList<Fruit> split(){ //将一种水果拆分，拆分以splitCount为依据，并以该种水果的总数进行拆分
-            this.splitCount++;
+            this.splitCount++;//如果一种水果上次被拆分为3份，这次应该被拆分为4份
             ArrayList<Fruit> splitedFruitList = new ArrayList<>();
             int remainder = this.number % this.splitCount;
             int quotient = this.number / this.splitCount;
