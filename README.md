@@ -1,3 +1,3 @@
 # myRepository
 
-This is a simple demo for learning spring.
+This is a simple demo for learning Spring.
